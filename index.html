@@ -38,14 +38,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .lightbox-close{position:absolute;top:2rem;right:2.5rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);cursor:pointer}
 @keyframes fadeIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
 #about{padding:6rem 3rem;background:var(--light)}
-.about-inner{max-width:650px;margin:0 auto}
+.about-inner{max-width:700px;margin:0 auto}
 .about-name{font-family:var(--font-serif);font-size:2.8rem;font-weight:300;font-style:italic;margin-bottom:2rem}
 .about-text{font-size:1.05rem;line-height:1.9;color:#222}
 .about-text p+p{margin-top:1.2rem}
 .about-links{margin-top:2.5rem;display:flex;gap:2rem;flex-wrap:wrap}
 .about-links a{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);text-decoration:none;transition:color .2s,border-color .2s}
 .about-links a:hover{color:var(--gray);border-color:var(--gray)}
-#policies{padding:6rem 3rem}
+#policies{padding:6rem 2rem}
 .policies-grid{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem 4rem}
 @media(max-width:640px){.policies-grid{grid-template-columns:1fr}}
 .policy-block h3{font-family:var(--font-serif);font-size:1.5rem;font-weight:400;font-style:italic;margin-bottom:.9rem;color:var(--black)}
@@ -85,8 +85,7 @@ footer p{font-size:.78rem;letter-spacing:.1em;color:#666;text-transform:uppercas
 </section>
 <section id="portfolio">
   <p class="section-label">Works</p>
-  <div style="position:relative">
-    <div class="gallery" id="gallery">
+  <div class="gallery" id="gallery">
     <div class="gallery-item"><img src="work1.jpg" alt="Seoul tattoo artist leeso fine line colour work"></div>
     <div class="gallery-item"><img src="work2.jpg" alt="Seoul tattoo artist leeso botanical tattoo"></div>
     <div class="gallery-item"><img src="work3.jpg" alt="Seoul tattoo artist leeso delicate colour tattoo"></div>
@@ -117,8 +116,6 @@ footer p{font-size:.78rem;letter-spacing:.1em;color:#666;text-transform:uppercas
     <div class="gallery-item"><img src="work28.jpg" alt="Seoul tattoo artist leeso delicate tattoo seoul"></div>
     <div class="gallery-item"><img src="work29.jpg" alt="Seoul tattoo artist leeso colour fine line"></div>
     <div class="gallery-item"><img src="work30.jpg" alt="Seoul tattoo artist leeso botanical colour work"></div>
-  </div>
-  <div style="position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,1));pointer-events:none"></div>
   </div>
 </section>
 <div class="lightbox" id="lightbox">
@@ -163,20 +160,19 @@ footer p{font-size:.78rem;letter-spacing:.1em;color:#666;text-transform:uppercas
       </div>
       <div class="policy-block">
         <h3>Studio Location</h3>
-        <p>The studio is located near Hongdae, Seoul. I will share the detailed location after the design is confirmed.</p>
+        <p>The studio is located near Hongdae, Seoul.<br>I will share the detailed location after the design is confirmed.</p>
       </div>
     </div>
   </div>
 </section>
 <section id="booking">
-  <div class="booking-inner">
+  <div style="max-width:580px;margin:0 auto">
     <p class="section-label">Booking</p>
     <h2 class="booking-title">Open for bookings.</h2>
-    
     <p class="booking-text">The studio is located near Hongdae, Seoul. I do not tattoo minors.<br>
 My response times can be irregular — please feel free to reach out anytime, and I appreciate your patience if replies are occasionally delayed.</p>
-
-    <div style="text-align:left;margin-top:2.5rem;border-top:0.5px solid #ddd;padding-top:2rem">
+  </div>
+  <div style="max-width:580px;margin:2.5rem auto 0;border-top:0.5px solid #ddd;padding-top:2rem;text-align:left">
       <p style="font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#555;margin-bottom:1.5rem">Please include the following in your message</p>
       <ul style="list-style:none;font-size:1.05rem;line-height:2.2;color:#111">
         <li>1. Your name</li>
@@ -185,10 +181,9 @@ My response times can be irregular — please feel free to reach out anytime, an
         <li>4. Date and time zone you want to make a reservation</li>
       </ul>
       <p style="font-size:1.05rem;color:#222;margin-top:2.5rem;line-height:2;text-align:left">Please contact me via Instagram DM or email.<br>
-      <a href="https://instagram.com/leeso_tattoo" target="_blank" style="font-size:1.1rem;color:#111;text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">@leeso_tattoo</a> &nbsp;·&nbsp;
-      <a href="mailto:leesoart8@gmail.com" style="font-size:1.1rem;color:#111;text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">leesoart8@gmail.com</a></p>
+      <a href="https://instagram.com/leeso_tattoo" target="_blank" style="font-size:1.3rem;color:#111;text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">@leeso_tattoo</a> &nbsp;·&nbsp;
+      <a href="mailto:leesoart8@gmail.com" style="font-size:1.3rem;color:#111;text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">leesoart8@gmail.com</a></p>
     </div>
-  </div>
 </section>
 <section id="archive">
   <div class="archive-inner">
