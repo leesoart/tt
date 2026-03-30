@@ -132,9 +132,9 @@ footer p{font-size:.78rem;letter-spacing:.1em;color:#666;text-transform:uppercas
       <div>
         <h2 class="about-name">Hello, I'm Leeso.</h2>
         <div class="about-text">
-          <p>I'm a tattoo artist based in Seoul, South Korea. I have been working as a tattooist since 2018,<br>and I specialise in colourful and delicate tattoo styles.</p>
-          <p>As a member of the Korean tattooists' labour union, Tattoo Union, <BR>I have completed professional infection control training conducted by Green Hospital, a public-interest medical institution.</p>
-          <p>I strictly follow Tattoo Union's work and sanitation guidelines to ㅠensure the safety and rights of both clients and tattooists.</p>
+          <p>I'm a tattoo artist based in Seoul, South Korea. I have been working as a tattoo artist since 2018,<br>and I specialise in colourful and delicate tattoo styles.</p>
+          <p>As a member of the Korean tattoo artists' labour union, Tattoo Union, I have completed professional infection control training conducted by Green Hospital, a public-interest medical institution.</p>
+          <p>I strictly follow Tattoo Union's work and sanitation guidelines to ensure the safety and rights of both clients and tattoo artists.</p>
           <p>I look forward to creating meaningful and beautiful work together. Thank you to everyone who takes interest in my work ✦</p>
         </div>
       </div>
@@ -207,3 +207,29 @@ My response times can be irregular — please feel free to reach out anytime, an
   </div>
 </footer>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-s
+<script>
+const gallery = document.getElementById('gallery');
+const allItems = Array.from(gallery.querySelectorAll('.gallery-item'));
+for (let i = allItems.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [allItems[i], allItems[j]] = [allItems[j], allItems[i]];
+}
+allItems.forEach(function(item) { gallery.appendChild(item); });
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lightbox-img');
+gallery.querySelectorAll('img').forEach(function(img) {
+  img.addEventListener('click', function() {
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lightbox.classList.add('open');
+  });
+});
+lightbox.addEventListener('click', function() {
+  lightbox.classList.remove('open');
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') lightbox.classList.remove('open');
+});
+</script>
+</body>
+</html>
