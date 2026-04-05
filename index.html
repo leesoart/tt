@@ -13,7 +13,7 @@
 :root{--white:#ffffff;--black:#0a0a0a;--gray:#666;--light:#f7f6f4;--font-serif:'Cormorant Garamond',Georgia,serif;--font-sans:'Jost',sans-serif}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-sans);background:var(--white);color:var(--black);font-weight:300;letter-spacing:.02em;overflow-x:hidden;font-size:17px}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:.5px solid rgba(0,0,0,.08)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 4rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:.5px solid rgba(0,0,0,.08)}
 .nav-logo{font-family:var(--font-serif);font-size:1.3rem;font-weight:400;letter-spacing:.12em;text-decoration:none;color:var(--black)}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:#333;transition:color .2s}
@@ -42,6 +42,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .about-name{font-family:var(--font-serif);font-size:2.8rem;font-weight:300;font-style:italic;margin-bottom:2rem}
 .about-text{font-size:1.05rem;line-height:1.9;color:#222}
 .about-text p+p{margin-top:1.2rem}
+@media(max-width:640px){.about-inner .about-name{font-size:2rem}.about-inner>div{flex-direction:column;gap:1.5rem}.about-inner>div>div:first-child{padding-top:0}.about-inner>div>div:first-child img{width:100%}}
 .about-links{margin-top:2.5rem;display:flex;gap:2rem;flex-wrap:wrap}
 .about-links a{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);text-decoration:none;transition:color .2s,border-color .2s}
 .about-links a:hover{color:var(--gray);border-color:var(--gray)}
@@ -125,9 +126,9 @@ footer p{font-size:.78rem;letter-spacing:.1em;color:#666;text-transform:uppercas
 <section id="about">
   <div class="about-inner">
     <p class="section-label">About</p>
-    <div style="display:flex;gap:3rem;align-items:flex-start">
-      <div style="flex-shrink:0;padding-top:1rem">
-        <img src="profile.jpg" alt="Leeso tattoo artist Seoul" style="width:280px;height:auto;object-fit:cover">
+    <div style="display:flex;gap:3rem;align-items:flex-start;flex-wrap:wrap">
+      <div style="flex-shrink:0;padding-top:1rem;max-width:100%">
+        <img src="profile.jpg" alt="Leeso tattoo artist Seoul" style="width:280px;max-width:100%;height:auto;object-fit:cover">
       </div>
       <div>
         <h2 class="about-name">Hello, I'm Leeso.</h2>
@@ -190,7 +191,7 @@ My response times can be irregular — please feel free to reach out anytime, an
       </ul>
       <p style="font-size:1.05rem;color:#222;margin-top:2.5rem;line-height:2;text-align:left">Please contact me via Instagram DM or email.<br>
       <a href="https://instagram.com/leeso_tattoo" target="_blank" style="font-size:1.3rem;color:#111;text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">@leeso_tattoo</a> &nbsp;·&nbsp;
-      <a href="mailto:leesoart8@gmail.com" style="font-size:1.3rem;color:#111;text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">leesoart8@gmail.com</a></p>
+      <a href="/cdn-cgi/l/email-protection#e28e8787918d839096daa2858f838b8ecc818d8f" style="font-size:1.3rem;color:#111;text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic"><span class="__cf_email__" data-cfemail="d2beb7b7a1bdb3a0a6ea92b5bfb3bbbefcb1bdbf">[email&#160;protected]</span></a></p>
      </div>
     </div>
 </section>
@@ -208,7 +209,7 @@ My response times can be irregular — please feel free to reach out anytime, an
     <a href="/cdn-cgi/l/email-protection#e18d8484928e809395d9a1868c80888dcf828e8c" style="font-size:.78rem;letter-spacing:.1em;color:#666;text-transform:uppercase;text-decoration:none;transition:color .2s">Email</a>
   </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const gallery = document.getElementById('gallery');
 const allItems = Array.from(gallery.querySelectorAll('.gallery-item'));
 for (let i = allItems.length - 1; i > 0; i--) {
@@ -222,15 +223,4 @@ gallery.querySelectorAll('img').forEach(function(img) {
   img.addEventListener('click', function() {
     lbImg.src = img.src;
     lbImg.alt = img.alt;
-    lightbox.classList.add('open');
-  });
-});
-lightbox.addEventListener('click', function() {
-  lightbox.classList.remove('open');
-});
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') lightbox.classList.remove('open');
-});
-</script>
-</body>
-</html>
+    lightbox.classList.add('open')
