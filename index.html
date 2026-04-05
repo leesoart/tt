@@ -14,7 +14,7 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--font-sans);background:var(--white);color:var(--black);font-weight:300;letter-spacing:.02em;overflow-x:hidden;font-size:17px}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 4rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:.5px solid rgba(0,0,0,.08)}
-@media(max-width:640px){nav{padding:1.5rem 1.5rem}}
+@media(max-width:640px){nav{padding:1.5rem 1.5rem}#menu-btn{display:flex!important}.nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.97);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;z-index:99}.nav-links.open{display:flex}.nav-links a{font-size:1rem;letter-spacing:.14em}}
 .nav-logo{font-family:var(--font-serif);font-size:1.3rem;font-weight:400;letter-spacing:.12em;text-decoration:none;color:var(--black)}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:#333;transition:color .2s}
@@ -71,12 +71,17 @@ footer p{font-size:.78rem;letter-spacing:.1em;color:#666;text-transform:uppercas
 <body>
 <nav>
   <a href="#home" class="nav-logo">Leeso</a>
-  <ul class="nav-links">
-    <li><a href="#portfolio">Works</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#policies">Policies</a></li>
-    <li><a href="#booking">Booking</a></li>
-    <li><a href="#archive">Archive</a></li>
+  <button id="menu-btn" style="display:none;background:none;border:none;cursor:pointer;padding:0;flex-direction:column;gap:5px" aria-label="Menu">
+    <span style="display:block;width:22px;height:1px;background:#111"></span>
+    <span style="display:block;width:22px;height:1px;background:#111"></span>
+    <span style="display:block;width:22px;height:1px;background:#111"></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#portfolio" onclick="closeMenu()">Works</a></li>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#policies" onclick="closeMenu()">Policies</a></li>
+    <li><a href="#booking" onclick="closeMenu()">Booking</a></li>
+    <li><a href="#archive" onclick="closeMenu()">Archive</a></li>
   </ul>
 </nav>
 <section id="home">
@@ -211,6 +216,14 @@ My response times can be irregular — please feel free to reach out anytime, an
   </div>
 </footer>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const menuBtn = document.getElementById('menu-btn');
+const navLinks = document.getElementById('nav-links');
+menuBtn.addEventListener('click', function() {
+  navLinks.classList.toggle('open');
+});
+function closeMenu() {
+  navLinks.classList.remove('open');
+}
 const gallery = document.getElementById('gallery');
 const allItems = Array.from(gallery.querySelectorAll('.gallery-item'));
 for (let i = allItems.length - 1; i > 0; i--) {
