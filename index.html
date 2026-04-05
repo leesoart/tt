@@ -226,34 +226,36 @@ My response times can be irregular — please feel free to reach out anytime, an
   </div>
 </footer>
 <script>
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-menuBtn.addEventListener('click', function() {
-  mobileMenu.classList.toggle('open');
-  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-});
-function closeMenu() {
-  mobileMenu.classList.remove('open');
-  document.body.style.overflow = '';
-}
-const gallery = document.getElementById('gallery');
-const allItems = Array.from(gallery.querySelectorAll('.gallery-item'));
-for (let i = allItems.length - 1; i > 0; i--) {
-  const j = Math.floor(Math.random() * (i + 1));
-  [allItems[i], allItems[j]] = [allItems[j], allItems[i]];
-}
-allItems.forEach(function(item) { gallery.appendChild(item); });
-const lightbox = document.getElementById('lightbox');
-const lbImg = document.getElementById('lightbox-img');
-gallery.querySelectorAll('img').forEach(function(img) {
-  img.addEventListener('click', function() {
-    lbImg.src = img.src;
-    lbImg.alt = img.alt;
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
+document.addEventListener('DOMContentLoaded', function() {
+  var menuBtn = document.getElementById('menu-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', function() {
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
   });
-});
-lightbox.addEventListener('click', function() {
-  lightbox.classList.remove('open');
-  document.body.style.overflow = '';
+  window.closeMenu = function() {
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  var gallery = document.getElementById('gallery');
+  var allItems = Array.from(gallery.querySelectorAll('.gallery-item'));
+  for (var i = allItems.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = allItems[i]; allItems[i] = allItems[j]; allItems[j] = tmp;
+  }
+  allItems.forEach(function(item) { gallery.appendChild(item); });
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  gallery.querySelectorAll('img').forEach(function(img) {
+    img.addEventListener('click', function() {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  lightbox.addEventListener('click', function() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  });
 });
